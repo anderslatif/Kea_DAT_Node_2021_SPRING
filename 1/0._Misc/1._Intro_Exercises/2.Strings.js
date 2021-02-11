@@ -43,7 +43,11 @@ console.log(average.toFixed(5));
 const letters = "abc";
 // Get me the character "c"
 
+console.log(letters.search("c")); // gets the index then look up again (not efficient)
 
+console.log(letters.charAt(2));
+
+console.log(letters[2]);
 
 // --------------------------------------
 // Exercise 7 - Replace
@@ -51,6 +55,10 @@ const letters = "abc";
 const fact = "You are learning javascript!";
 
 // capitalize the J in Javascript
+
+const capitalizedJSentence = fact.replace("j", "J");
+
+console.log(capitalizedJSentence);
 
 
 // --------------------------------------
