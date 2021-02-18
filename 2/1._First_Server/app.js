@@ -1,16 +1,20 @@
 const express = require("express");
 const app = express();
+// const app = require(express)();
 
-// consider what datatype to store your data in
-// you are allowed to hardcode the id
-
+// send back empty json
 app.get("/", (req, res) => {
-    res.send({ message: "First call to /" });
+    res.send({});
 });
 
-app.get("/anotherpath/id", (req, res) => {
-    const id = 1;
-    res.send({ data: "some other things" });
+// create a route on the endpoint me which sends back a json that represents you
+app.get("/me", (req, res) => {
+    const me = {
+        name: "Michael.js",
+        age: 2
+    };
+    res.send(me);
 });
+
 
 app.listen(8080);
