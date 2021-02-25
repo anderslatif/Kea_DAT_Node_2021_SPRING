@@ -15,7 +15,3 @@ const failures = ["mislick", "falling down", "skateboard accident", "tiktok fail
 const newFailures = failures.map((failure) => failure);
 
 console.log(newFailures);
-
-// Create a new express server from scratch.. this will be a pure Data API
-// so I will call it 2._Data_API
-
