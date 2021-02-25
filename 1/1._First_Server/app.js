@@ -22,4 +22,15 @@ app.get("/me", (req, res) => {
     res.send(me);
 });
 
+const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+app.get("/day", (req, res) => {
+    // new Date().toLocaleDateString('dk-DK', { weekday: 'long' })
+    // could be solved like above or...
+    const todaysWeekday = new Date().getDay();
+    res.send({ day: weekdays[todaysWeekday] });
+});
+
+// write a route called about which gives you the version of this API in a string
+
 app.listen(8080);
