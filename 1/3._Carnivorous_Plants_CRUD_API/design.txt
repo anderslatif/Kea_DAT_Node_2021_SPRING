@@ -1,0 +1,12 @@
+GET
+/plants 
+/plants/id
+
+POST
+/plants
+
+PATCH
+/plants/id
+
+DELETE
+/plants/id

@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.json());
 
+const cat = require("./cat.json");
+
 app.get("/querystring", (req, res) => {
     // console.log(req.query);
     res.send({ query: req.query });
@@ -22,4 +24,9 @@ app.post("/whatever", (req, res) => {
 });
 
 
-app.listen(8080);
+app.listen(8080, (error) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running on port", 8080);
+});
