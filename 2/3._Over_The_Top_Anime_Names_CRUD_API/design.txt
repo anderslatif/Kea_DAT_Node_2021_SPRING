@@ -1,0 +1,7 @@
+<collection>: anime_names
+
+GET /anime_names
+GET /anime_names/id
+POST /anime_names
+PATCH /anime_names/id
+DELETE /anime_names/id
