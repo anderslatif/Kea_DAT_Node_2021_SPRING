@@ -9,9 +9,11 @@ app.get("/dragons", (req, res) => {
     res.sendFile(__dirname + "/public/dragons.html");
 });
 
-app.listen(8080, error => {
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, error => {
     if (error) {
         console.log(error);
     }
-    console.log("Server is running on port", 8080);
+    console.log("Server is running on port", Number(PORT));
 });

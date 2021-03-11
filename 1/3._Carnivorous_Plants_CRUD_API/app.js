@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+let id = 3;
+
 // carnivorous plants
 let plants = [
     {
@@ -13,16 +15,24 @@ let plants = [
     }
 ];
 
+
 app.get("/plants", (req, res) => {
-    res.send({ plants: plants });
+    res.send({ data: plants });
 });
 
 app.get("/plants/:id", (req, res) => {
     const plantId = Number(req.params.id);
     const foundPlant = plants.find(plant => plant.id === plantId);
-    res.send({ foundPlant: foundPlant });
+    res.send({ data: foundPlant });
 });
 
+// this is broken and doesn't work.. fix it
+// bonus: use cross-env in this project and allow the user to define a custom port
+app.post("/plants", (req, res) => {
+    const newPlant = req.body;
+    newPlant.id = id++;
+    res.send({ data: newPlant });
+});
 
 app.listen(8080, (error) => {
     if (error) {
