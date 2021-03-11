@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json());
+
 let animeNames = [
     {
         id: 1,
@@ -14,6 +16,8 @@ let animeNames = [
     }
 ];
 
+let AUTOINCREMENT = animeNames.length;
+
 app.get("/anime_names", (req, res) => {
     res.send({ data: animeNames });
 });
@@ -24,6 +28,27 @@ app.get("/anime_names/:id", (req, res) => {
     res.send({ data: foundAnimeName });
 });
 
+app.post("/anime_names", (req, res) => {
+    const newAnimeName = req.body;
+    newAnimeName.id = ++AUTOINCREMENT;
+    animeNames.push(newAnimeName);
+    res.send({ data: newAnimeName });
+});
+
+app.patch("/anime_names/:id", (req, res) => {
+    animeNames = animeNames.map(animeName => {
+        if (animeName.id === Number(req.params.id)) {
+            return { ...animeName, ...req.body, id: animeName.id };
+        }
+        return animeName;
+    });
+    res.send({ data: wasUpdated });
+});
+
+app.delete("/anime_names/:id", (req, res) => {
+    animeNames = animeNames.filter(animeName => animeName.id !== Number(req.params.id));
+    res.send({ data: animeNames });
+});
 
 app.listen(8080, (error) => {
     if (error) {
