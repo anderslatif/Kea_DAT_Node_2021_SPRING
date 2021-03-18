@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 
+app.use(express.static('public'));
+
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + "/public/welcome.html");
+    res.sendFile(__dirname + "/public/welcome/welcome.html");
 });
 
 app.get("/pizza", (req, res) => {
@@ -19,6 +21,13 @@ app.get("/pub", (req, res) => {
     } else {
         res.send({ doorman: "Sorry, you don't have money for whiskey." });
     }
+});
+
+app.get("/candle", (req, res) => {
+    if (req.query.blow) {
+        return res.send({ lightsOn: false });
+    }
+    res.send({ lightsOn: true });
 });
 
 const port = process.env.PORT || 8080;
