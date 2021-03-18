@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dragons.css">
+    <title>Dragon cave</title>
+</head>
+<body>
+    <h1>Here be dragons</h1>
+
+    <a href="/">This is uncharted territory. Take me back!</a>
+
+    <p class="is-puff-here">Puff was here</p>
+
+    <div id="grid-container">
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+        <div id="6"></div>
+        <div id="7"></div>
+        <div id="8"></div>
+        <div id="9"></div>
+    </div>
+
+    <img id="dragon-img" src="https://cdn.pixabay.com/photo/2014/01/05/01/19/dragon-238931_1280.jpg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./dragons.js"></script>
+    <script>
+        
+        /* when I click print out "hello, you dabber clicker" */
+
+        // $("body").css("background-color", "red");
+
+        setTimeout(() => {
+            $(".is-puff-here").text("Puff bailed and said 'bye dudes'.");
+            // window.location.href = "/";
+        }, 5000);
+    </script>
+</body>
+</html>
