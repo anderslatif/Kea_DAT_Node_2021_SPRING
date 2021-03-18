@@ -30,6 +30,10 @@ app.get("/candle", (req, res) => {
     res.send({ lightsOn: true });
 });
 
+app.get("/catfacts", (req, res) => {
+    res.sendFile(__dirname + "/public/catfacts/catfacts.html");
+});
+
 const port = process.env.PORT || 8080;
 
 app.listen(port, (error) => {
