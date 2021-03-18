@@ -25,13 +25,16 @@
         <div id="9"></div>
     </div>
 
-    <img id="dragon-img" src="https://cdn.pixabay.com/photo/2014/01/05/01/19/dragon-238931_1280.jpg">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./dragons.js"></script>
     <script>
-        
-        /* when I click print out "hello, you dabber clicker" */
+        const dragonImage = `<img id="dragon-img" src="https://cdn.pixabay.com/photo/2014/01/05/01/19/dragon-238931_1280.jpg">`;
+
+        $("#1").append(dragonImage);
+
+        $(document).on("click", (event) => {
+            $("#1 #dragon-img").remove();
+        });
 
         // $("body").css("background-color", "red");
 
