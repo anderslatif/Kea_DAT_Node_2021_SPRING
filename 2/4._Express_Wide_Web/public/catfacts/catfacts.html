@@ -8,10 +8,31 @@
 </head>
 <body>
     
+    <h1>Cat fact</h1>
+    <div id="cat-fact"></div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        // https://cat-fact.herokuapp.com/facts/random
-        // todo: use Ajax in jQuery that we included above to call cat facts through the URL above
+        function getCatFact() {
+            $.get(`https://cat-fact.herokuapp.com/facts/random?amount=500`, (response) => {
+            
+            const catFactDiv = document.getElementById("cat-fact");
+            response.map(fact => {
+                if (fact.status.verified) {
+                    const nestedListItem = document.createElement("li");
+                    nestedListItem.innerText = fact.text;
+                    
+                    catFactDiv.append(nestedListItem);
+                }
+            })
+
+        });
+        }
+        getCatFact();
+
+
+
+
     </script>
 </body>
 </html>
