@@ -11,6 +11,10 @@ app.get("/dragons", (req, res) => {
     res.sendFile(__dirname + "/public/dragons/dragons.html");
 });
 
+app.get("/crypto", (req, res) => {
+    res.sendFile(__dirname + "/public/crypto/crypto.html");
+});
+
 app.get("/safeport", (req, res) => {
     res.send({ message: "You are safe here. Nothing can hurt you." });
 });
@@ -29,9 +33,9 @@ app.get("/potato", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 
-app.listen(PORT, error => {
+const server = app.listen(PORT, error => {
     if (error) {
         console.log(error);
     }
-    console.log("Server is running on port", Number(PORT));
+    console.log("Server is running on port", server.address().port);
 });
