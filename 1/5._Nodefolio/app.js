@@ -9,6 +9,9 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/frontpage/frontpage.html");
 });
 
+/* Serve the projects page with a nav, footer and main content that says "projects..." for now */
+
+
 const server = app.listen(process.env.PORT || 8080, (error) => {
     if (error) {
         console.log(error);
