@@ -3,6 +3,8 @@ const app = express();
 
 app.use(express.static('public'));
 
+const fetch = require("node-fetch");
+
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/welcome/welcome.html");
 });
@@ -29,6 +31,12 @@ app.get("/potato", (req, res) => {
         return res.send({ type: "petite potato" });
     }
     return res.send({ lifePhilosophy: "My life is potato. I have potato blood in my veins." });
+});
+
+app.get("/proxy", (req, res) => {
+    fetch("https://www.google.com")
+    .then(res => res.textConverted())
+    .then(body => res.send(body));
 });
 
 const PORT = process.env.PORT || 8080;

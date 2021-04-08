@@ -1,0 +1,27 @@
+{
+  "name": "nodefolio",
+  "version": "0.0.1",
+  "description": "A personal portfolio project using Node",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anderslatif/Kea_DAT_Node_2021_SPRING.git"
+  },
+  "keywords": [
+    "portfolio",
+    "Node",
+    "personal"
+  ],
+  "author": "Anders Latif",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anderslatif/Kea_DAT_Node_2021_SPRING/issues"
+  },
+  "homepage": "https://github.com/anderslatif/Kea_DAT_Node_2021_SPRING#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
