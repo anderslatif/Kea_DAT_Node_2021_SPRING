@@ -6,11 +6,6 @@
     float: right;
 }
 
-#footer-copyright {
-    display: flex;
-    justify-content: center;
-}
-
 #main-content {
     min-height: calc(100vh - 120px);   
 }
