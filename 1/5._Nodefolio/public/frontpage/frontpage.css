@@ -1,18 +1,1 @@
-#logo {
-    width: 50px;
-}
-
-#nav-right {
-    float: right;
-}
-
-#main-content {
-    min-height: calc(100vh - 125px);
-}
-
-#footer-about {
-    height: 10px;
-    display: flex;
-    justify-content: center;
-}
 
