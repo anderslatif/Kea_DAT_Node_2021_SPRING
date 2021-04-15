@@ -18,10 +18,13 @@ const router = require("express").Router();
 
 const projects = [{
     title: "Nodefolio",
-    description: "Personal portfolio implemented in Nodel.js",
+    description: "Personal portfolio implemented in Node.js",
     startDate: new Date("2021-04-08"),
     endDate: new Date("2021-04-15"),
     gitLink: "https://github.com/anderslatif/Kea_DAT_Node_2021_SPRING.git/2/5._Nodefolio"
+}, {
+    title: "new project",
+    description: "This is the newest thing that I'm sinking my time into"
 }];
 
 router.get("/api/projects", (req, res) => {
