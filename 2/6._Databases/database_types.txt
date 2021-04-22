@@ -1,0 +1,40 @@
+Relational Databases
+--------------------
+--------------------
+MySql
+MariaDB
+MsSql
+PostgreSql
+Sqlite
+Oracle / Mysql Enterprise
+
+In-memory
+---------
+H2
+
+NoSql 
+--------------------
+--------------------
+
+Document
+--------
+MongoDB
+FireBase
+Raven
+
+
+Object
+------
+Realm
+
+
+Graph
+-----
+Neo4J
+
+
+Key-Value
+---------
+    Cache-database
+Redis
+
