@@ -1,0 +1,40 @@
+Relational Databases
+--------------------
+--------------------
+mysql
+mariadb
+oracle/mysql enterprise
+mssql
+sqlite3
+postgresql
+couchdb
+
+
+in-memory
+----------
+h2 
+
+
+NoSql
+--------------------
+--------------------
+
+document
+--------
+mongodb
+
+object
+------
+realm
+
+graph
+-----
+neo4j
+
+key-value
+----------
+ --- cache
+    redis
+
+
+

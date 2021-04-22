@@ -1,0 +1,9 @@
+C
+    insert
+R 
+    find
+U 
+    update
+D
+    delete
+
