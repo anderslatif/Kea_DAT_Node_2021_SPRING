@@ -6,7 +6,11 @@ const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
 io.on("connection", (socket) => {
-    console.log("A socket connected with id", socket.id);
+    // console.log("A socket connected with id", socket.id);
+
+    socket.on("colorChanged", (data) => {
+        socket.emit("changeBackgroundToThisColor", data);
+    });
 });
 
 app.get("/", (req, res) => {
