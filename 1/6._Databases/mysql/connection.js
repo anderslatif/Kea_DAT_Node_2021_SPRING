@@ -1,11 +1,12 @@
+require('dotenv').config();
+
 const mysql      = require('mysql');
 const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'password',
-  database : 'movies'
+  host     : process.env.DB_HOST,
+  database : process.env.DB_DATABASE,
+  user     : process.env.DB_USER,
+  password : process.env.DB_PASSWORD
 });
-
 
 connection.connect();
 
@@ -19,7 +20,9 @@ if (process.argv.includes("--createdb")) {
             throw error;
         }
         console.log(result);
-        connection.end();
     });
 }
 
+module.exports = {
+    connection
+};
