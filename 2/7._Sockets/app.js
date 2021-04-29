@@ -9,7 +9,14 @@ io.on("connection", (socket) => {
     // console.log("A socket connected with id", socket.id);
 
     socket.on("colorChanged", (data) => {
-        socket.emit("changeBackgroundToThisColor", data);
+        // changes the color for ALL the sockets in the io namespace
+        io.emit("changeBackgroundToThisColor", data);
+
+        // changes the color ONLY for the socket that made the change
+        // socket.emit("changeBackgroundToThisColor", data);
+        
+        // changesa the color for ALL the sockets EXCEPT itself
+        // socket.broadcast.emit("changeBackgroundToThisColor", data);
     });
 });
 
