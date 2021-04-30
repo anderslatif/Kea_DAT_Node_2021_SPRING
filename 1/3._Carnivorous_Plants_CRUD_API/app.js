@@ -7,7 +7,7 @@ app.use(express.json());
 let plants = [
     {
         id: 1,
-        title: "This one will bite your toes of"
+        title: "This one will bite your toes off"
     },
     {
         id: 2,

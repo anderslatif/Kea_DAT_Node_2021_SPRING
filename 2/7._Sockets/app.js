@@ -15,7 +15,7 @@ io.on("connection", (socket) => {
         // changes the color ONLY for the socket that made the change
         // socket.emit("changeBackgroundToThisColor", data);
         
-        // changesa the color for ALL the sockets EXCEPT itself
+        // changes the color for ALL the sockets EXCEPT itself
         // socket.broadcast.emit("changeBackgroundToThisColor", data);
     });
 });
