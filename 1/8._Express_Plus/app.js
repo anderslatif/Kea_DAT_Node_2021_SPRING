@@ -6,6 +6,8 @@ const app = express();
 import helmet from "helmet";
 app.use(helmet());
 
+import passwordUtil from "./util/password.mjs";
+
 /* 
 How to get an external library in our HTML files
 - Get from the CDN
@@ -13,6 +15,17 @@ How to get an external library in our HTML files
 - Get from NPM - Copy files over from NPM manually
                 - Point to the file from the html script tag (src) .. remember to serve that single file statically / folder 
 */
+
+import session from "express-session";
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
+
+/* Create a session route and set the router up with express */
+
 
 import rateLimit from "express-rate-limit";
 const basicLimiter = rateLimit({
@@ -37,6 +50,9 @@ const ipLogger = (req, res, next) => {
 
 app.use(ipLogger);
 
+import sessionRouter from "./routes/session.mjs";
+app.use(sessionRouter);
+
 app.get("/", (req, res, next) => {
     // res.send(`<h1>First</h1>`);
     console.log("it hits me... oh yeah");
@@ -51,7 +67,7 @@ app.get("/house/door", (req, res) => {
     res.send(`<h1>You've come to the right place</h1>`);
 });
 
-app.get("/house/*", [], (req, res) => {
+app.get("/house/*", (req, res) => {
     res.send(`This house now features that.`);
 });
 
