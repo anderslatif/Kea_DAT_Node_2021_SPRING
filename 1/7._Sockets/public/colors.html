@@ -10,6 +10,7 @@
     <input id="color-picker" type="color">
     <button onclick="sendColor()">Send color</button>
 
+    <div id="choosen-color"></div>
 
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -23,6 +24,7 @@
 
         socket.on("changeColor", (data) => {
             document.body.style.backgroundColor = data.color;
+            document.getElementById("choosen-color").innerText = data.color;
         });
 
     </script>

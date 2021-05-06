@@ -5,11 +5,13 @@ const server = require("http").createServer(app);
 
 const io = require("socket.io")(server);
 
+const escapeHtml = require("html-escaper").escape;
+
 io.on("connection", (socket) => {
     
     socket.on("colorSelected", (data) =>  {
         // changes the color for ALL the sockets in io
-        io.emit("changeColor", data);
+        io.emit("changeColor", { color: escapeHtml(color.data) });
 
         // changes the color for the very SAME socket that changed the color initially
         // socket.emit("changeColor", data);
@@ -18,6 +20,9 @@ io.on("connection", (socket) => {
         // socket.broadcast.emit("changeColor", data);
     });
 
+    socket.on("disconnect", () => {
+        console.log("socket disconnected")
+    });
 
 });
 
