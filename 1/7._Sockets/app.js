@@ -11,7 +11,7 @@ io.on("connection", (socket) => {
     
     socket.on("colorSelected", (data) =>  {
         // changes the color for ALL the sockets in io
-        io.emit("changeColor", { color: escapeHtml(color.data) });
+        io.emit("changeColor", { color: escapeHtml(data.color) });
 
         // changes the color for the very SAME socket that changed the color initially
         // socket.emit("changeColor", data);
