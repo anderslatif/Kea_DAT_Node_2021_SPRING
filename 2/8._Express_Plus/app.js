@@ -48,6 +48,7 @@ app.use(session({
 import sessionRouter from './router/session.mjs';
 app.use(sessionRouter);
 
+import password from "./util/password.mjs";
 
 app.get("/", (req, res, next) => {
     console.log("First route was hit but pass it on");
